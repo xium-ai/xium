@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-      <html lang="en">
-      <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Installation Guide – XIUM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function copyToClipboard(id, btn) {
+      const text = document.getElementById(id).textContent.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 1500);
+      }).catch(err => {
+        console.error("Clipboard copy failed", err);
+        btn.textContent = 'Error';
+      });
+    }
+  </script>
+
 </head>
 <body class="bg-gray-900 text-white font-inter flex flex-col min-h-screen">
 <header class="p-6 bg-black shadow-md flex justify-between items-center">
@@ -27,14 +39,111 @@
 
 <section class="max-w-4xl mx-auto px-6 pb-24 space-y-16">
   <!-- macOS -->
-  <div>
-    <h2 class="text-2xl font-bold mb-4">🖥️ macOS</h2>
-    <ol class="list-decimal list-inside space-y-2 text-gray-200">
-      <li>Download the <code>xium.dmg</code> from the <a href="https://github.com/xium/xium.ai/releases" class="text-blue-400 underline">releases page</a>.</li>
-      <li>Double-click the downloaded file to open it.</li>
-      <li>Drag the XIUM app into your <strong>Applications</strong> folder.</li>
-      <li>On first launch, you may need to right-click and choose <strong>Open</strong> to bypass macOS Gatekeeper.</li>
-    </ol>
+  <div class="space-y-6 text-gray-200">
+    <h2 class="text-2xl font-bold">🖥️ macOS Installation Guide</h2>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-2">1. Download from Official Sources</h3>
+      <p>
+        Always download XIUM only from our official website or our GitHub release server:
+        <a href="https://github.com/xium-ai/xium/releases" class="text-blue-400 underline">https://github.com/xium-ai/xium/releases</a>.
+        This ensures you are getting the latest and untampered version of our installer.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-2">2. Get the Installer</h3>
+      <p>
+        Download <code>xium.dmg</code> and optionally <code>xium.dmg.sig</code> (for signature verification) from this link:
+        <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg" class="text-blue-400 underline">
+          xium.dmg.sig
+        </a>and
+        <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg.sig" class="text-blue-400 underline">
+          xium.dmg
+        </a>
+        You can also find it on our <a href="https://github.com/xium-ai/xium/releases" class="text-blue-400 underline">releases page</a>.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-2">3. Verify the Download (Optional)</h3>
+      <p>
+        To ensure the integrity of the download, we provide a SHA-256 checksum. Open your terminal and run:
+      </p>
+      <br>
+
+      <div class="relative">
+<pre id="cmd-shasum" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
+shasum -a 256 Downloads/xium.dmg
+</pre>
+        <button
+                onclick="copyToClipboard('cmd-shasum', this)"
+                class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
+        >
+          Copy
+        </button>
+      </div>
+
+      <br>
+      <p>
+        The output must be:
+        <code class="bg-gray-800 px-2 py-1 rounded">be8ee6fb23b6230d7f6061ea0bb7a4ad47a9e552bda165fcfdd037301cc88315</code>
+      </p>
+      <br>
+      <p>
+        We also sign our software using our own GPG key, because we intentionally do not use Apple’s notarization services.
+      </p>
+      <p>To verify the signature, run:</p>
+      <br>
+      <div class="relative">
+<pre id="cmd-gpg" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
+gpg --verify Downloads/xium.dmg.sig Downloads/xium.dmg
+</pre>
+        <button
+                onclick="copyToClipboard('cmd-gpg', this)"
+                class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
+        >
+          Copy
+        </button>
+      </div>
+      <br>
+      <p>
+        You should see output similar to:
+      </p>
+      <br>
+      <pre class="bg-gray-800 p-3 rounded-lg overflow-x-auto text-sm">
+gpg: Signature made Thu 29 May 17:35:52 2025 BST
+gpg:                using RSA key 3DBD3594B4C2E55B5256334FB91C871A7C682D48
+gpg: Good signature from "xium &lt;info@xium.ai&gt;" [ultimate]
+    </pre>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-2">4. Install and Launch</h3>
+      <ol class="list-decimal list-inside space-y-2 text-gray-200">
+        <li>Double-click the <code>xium.dmg</code> file to mount the installer disk image.</li>
+        <li>A Finder window will open showing the <strong>XIUM</strong> app and the <strong>Applications</strong> folder.</li>
+        <li>Drag the <strong>XIUM</strong> app into the <strong>Applications</strong> folder to install it.</li>
+        <li>
+          To remove macOS quarantine restrictions and allow the app to run, open the Terminal and run:
+        </li>
+      </ol>
+      <br>
+      <div class="relative">
+<pre id="cmd-xattr" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
+xattr -dr com.apple.quarantine /Applications/Xium.app
+</pre>
+        <button
+                onclick="copyToClipboard('cmd-xattr', this)"
+                class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
+        >
+          Copy
+        </button>
+      </div>
+      <br>
+      <p>You can now launch the app normally, without Apple’s signing or approval.</p>
+    </div>
+
   </div>
 
   <!-- Windows -->
