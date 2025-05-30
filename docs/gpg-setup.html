@@ -14,17 +14,60 @@
     </div>
 </header>
 
-<section class="text-center py-24 px-6">
-    <h2 class="text-4xl font-extrabold mb-6">Verify Our Software with GPG</h2>
-    <p class="text-xl max-w-2xl mx-auto mb-12">
-        Learn how to install GPG and import our public key to verify the authenticity of your downloads.
-    </p>
+<section class="py-24 px-6 max-w-3xl mx-auto text-left">
+    <h2 class="text-4xl font-extrabold mb-8 text-center">Verify Our Software with GPG</h2>
 
-    <a href="xium.asc" download="xium.asc" class="text-blue-400 underline hover:text-blue-300">
-        Download XIUM Public GPG Key
-    </a>
+    <ol class="space-y-6 text-lg leading-relaxed list-decimal list-inside">
+        <li>
+            <strong>Download the XIUM public GPG key:</strong><br />
+            <a href="xium.asc" download="xium.asc" class="text-blue-400 underline hover:text-blue-300">
+                Download XIUM Public GPG Key
+            </a>
+        </li>
 
-    <!-- Hier kannst du deinen Inhalt einfügen -->
+        <li>
+            <strong>Install GPG:</strong><br />
+            <ul class="list-disc list-inside ml-5 mt-2 space-y-1">
+                <li>
+                    <a href="https://gpgtools.org/" target="_blank" class="text-blue-400 underline hover:text-blue-300">
+                        macOS: GPGTools
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.gpg4win.org/" target="_blank" class="text-blue-400 underline hover:text-blue-300">
+                        Windows: Gpg4win
+                    </a>
+                </li>
+                <li>
+                    Linux: Install via your package manager (e.g. <code>sudo apt install gnupg</code>)
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Import the key into your GPG keychain:</strong><br />
+            <p class="mt-2">
+                If you're using a graphical GPG application (e.g. GPG Keychain on macOS or Kleopatra on Windows):
+            </p>
+            <ul class="list-disc list-inside ml-5 mt-2 space-y-1">
+                <li>
+                    Open the application, then use the menu: <strong>File → Import…</strong> and select <code>xium.asc</code>
+                </li>
+            </ul>
+            <p class="mt-4">
+                Alternatively, use the command line (Linux/macOS/Windows):
+            </p>
+            <code class="bg-gray-800 px-2 py-1 rounded inline-block mt-1">gpg --import xium.asc</code>
+        </li>
+
+        <li>
+            <strong>Verify downloaded software:</strong><br />
+            If we provide a signature file (e.g. <code>xium.dmg.asc</code>), run:<br />
+            <code class="bg-gray-800 px-2 py-1 rounded inline-block mt-1">
+                gpg --verify xium.dmg.asc xium.dmg
+            </code>
+        </li>
+    </ol>
 </section>
 
 <footer class="bg-black text-center py-6 text-gray-400 mt-auto">
