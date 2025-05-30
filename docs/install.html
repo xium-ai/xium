@@ -1,182 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Installation Guide – XIUM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function copyToClipboard(id, btn) {
-      const text = document.getElementById(id).textContent.trim();
-      navigator.clipboard.writeText(text).then(() => {
-        const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => {
-          btn.textContent = originalText;
-        }, 1500);
-      }).catch(err => {
-        console.error("Clipboard copy failed", err);
-        btn.textContent = 'Error';
-      });
-    }
-  </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Installation Guide – XIUM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function copyToClipboard(id, btn) {
+            const text = document.getElementById(id).textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 1500);
+            }).catch(err => {
+                console.error("Clipboard copy failed", err);
+                btn.textContent = 'Error';
+            });
+        }
+    </script>
 
 </head>
 <body class="bg-gray-900 text-white font-inter flex flex-col min-h-screen">
 <header class="p-6 bg-black shadow-md flex justify-between items-center">
-  <div class="flex items-center space-x-4">
-    <a href="index.html" class="text-2xl font-bold text-white">XIUM</a>
-  </div>
+    <div class="flex items-center space-x-4">
+        <a href="index.html" class="text-2xl font-bold text-white">XIUM</a>
+    </div>
 </header>
 
 <section class="text-center py-16 px-6">
-  <h1 class="text-4xl font-extrabold mb-6">Installation Guide</h1>
-  <p class="text-lg max-w-2xl mx-auto text-gray-300">
-    This page provides step-by-step instructions to install XIUM on macOS, Windows, and Linux.
-  </p>
+    <h1 class="text-4xl font-extrabold mb-6">Installation Guide</h1>
+    <p class="text-lg max-w-2xl mx-auto text-gray-300">
+        This page provides step-by-step instructions to install XIUM on macOS, Windows, and Linux.
+    </p>
 </section>
 
 <section class="max-w-4xl mx-auto px-6 pb-24 space-y-16">
-  <!-- macOS -->
-  <div class="space-y-6 text-gray-200">
-    <h2 class="text-2xl font-bold">🖥️ macOS Installation Guide</h2>
+    <!-- macOS -->
+    <div class="space-y-6 text-gray-200">
+        <h2 class="text-2xl font-bold">🖥️ macOS Installation Guide</h2>
 
-    <div>
-      <h3 class="text-xl font-semibold mb-2">1. Download from Official Sources</h3>
-      <p>
-        Always download XIUM only from our official website or our GitHub release server:
-        <a href="https://github.com/xium-ai/xium/releases" class="text-blue-400 underline">https://github.com/xium-ai/xium/releases</a>.
-        This ensures you are getting the latest and untampered version of our installer.
-      </p>
-    </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-2">1. Download from Official Sources</h3>
+            <p>
+                Always download XIUM only from our official website or our GitHub release server:
+                <a href="https://github.com/xium-ai/xium/releases" class="text-blue-400 underline">https://github.com/xium-ai/xium/releases</a>.
+                This ensures you are getting the latest and untampered version of our installer.
+            </p>
+        </div>
 
-    <div>
-      <h3 class="text-xl font-semibold mb-2">2. Get the Installer</h3>
-      <p>
-        Download <code>xium.dmg</code> and optionally <code>xium.dmg.sig</code> (for signature verification) from this link:
-        <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg" class="text-blue-400 underline">
-          xium.dmg.sig
-        </a>and
-        <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg.sig" class="text-blue-400 underline">
-          xium.dmg
-        </a>
-        You can also find it on our <a href="https://github.com/xium-ai/xium/releases" class="text-blue-400 underline">releases page</a>.
-      </p>
-    </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-2">2. Get the Installer</h3>
+            <p>
+                Download <code>xium.dmg</code> and optionally <code>xium.dmg.sig</code> (for signature verification)
+                from this link:
+                <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg.sig"
+                   class="text-blue-400 underline">
+                    xium.dmg
+                </a>
+                <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg"
+                   class="text-blue-400 underline">
+                    xium.dmg.sig
+                </a>
+                You can also find it on our <a href="https://github.com/xium-ai/xium/releases"
+                                               class="text-blue-400 underline">releases page</a>.
+            </p>
+        </div>
 
-    <div>
-      <h3 class="text-xl font-semibold mb-2">3. Verify the Download (Optional)</h3>
-      <p>
-        To ensure the integrity of the download, we provide a SHA-256 checksum. Open your terminal and run:
-      </p>
-      <br>
+        <div>
+            <h3 class="text-xl font-semibold mb-2">3. Verify the Download (Optional)</h3>
+            <p>
+                To ensure the integrity of the download, we provide an SHA-256 checksum. Open your terminal and run:
+            </p>
+            <br>
 
-      <div class="relative">
+            <div class="relative">
 <pre id="cmd-shasum" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
 shasum -a 256 Downloads/xium.dmg
 </pre>
-        <button
-                onclick="copyToClipboard('cmd-shasum', this)"
-                class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
-        >
-          Copy
-        </button>
-      </div>
+                <button
+                        onclick="copyToClipboard('cmd-shasum', this)"
+                        class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
+                >
+                    Copy
+                </button>
+            </div>
 
-      <br>
-      <p>
-        The output must be:
-        <code class="bg-gray-800 px-2 py-1 rounded">3d2c1af99bdfb50756d872ed9b5446317f4ace0857fddc9891d558512f3d6ca0</code>
-      </p>
-      <br>
-      <p>
-        We also sign our software using our own GPG key, because we intentionally do not use Apple’s notarization services.
-      </p>
-      <p>To verify the signature, run:</p>
-      <br>
-      <div class="relative">
+            <br>
+            <p>
+                The output must be:
+                <code class="bg-gray-800 px-2 py-1 rounded">3d2c1af99bdfb50756d872ed9b5446317f4ace0857fddc9891d558512f3d6ca0</code>
+            </p>
+            <br>
+            <p>
+                We also sign our software using our own GPG key, because we intentionally do not use Apple’s
+                notarization services.
+                To verify the signature, <strong>GPG must be installed</strong> on your system. Please follow our guide
+                on how to install
+                GPG (e.g. via <a href="https://gpgtools.org/" target="_blank">GPGTools for macOS</a>) and how to import
+                our public key:
+                <a href="gpg-setup.html">gpg-setup</a>.
+            </p>
+            <p>To verify the signature, run:</p>
+            <br>
+            <div class="relative">
 <pre id="cmd-gpg" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
 gpg --verify Downloads/xium.dmg.sig Downloads/xium.dmg
 </pre>
-        <button
-                onclick="copyToClipboard('cmd-gpg', this)"
-                class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
-        >
-          Copy
-        </button>
-      </div>
-      <br>
-      <p>
-        You should see output similar to:
-      </p>
-      <br>
-      <pre class="bg-gray-800 p-3 rounded-lg overflow-x-auto text-sm">
+                <button
+                        onclick="copyToClipboard('cmd-gpg', this)"
+                        class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
+                >
+                    Copy
+                </button>
+            </div>
+            <br>
+            <p>
+                You should see output similar to:
+            </p>
+            <br>
+            <pre class="bg-gray-800 p-3 rounded-lg overflow-x-auto text-sm">
 gpg: Signature made Thu 29 May 17:35:52 2025 BSTSignatur vom Thu 29 May 20:48:53 2025 BST
 gpg:                using RSA key 2891CE24C0BF6F337B7C350F6BE8091CA137AEDA
 gpg: Good signature from "xium &lt;info@xium.ai&gt;" [ultimate]
     </pre>
-    </div>
+        </div>
 
-    <div>
-      <h3 class="text-xl font-semibold mb-2">4. Install and Launch</h3>
-      <ol class="list-decimal list-inside space-y-2 text-gray-200">
-        <li>Double-click the <code>xium.dmg</code> file to mount the installer disk image.</li>
-        <li>A Finder window will open showing the <strong>XIUM</strong> app and the <strong>Applications</strong> folder.</li>
-        <li>Drag the <strong>XIUM</strong> app into the <strong>Applications</strong> folder to install it.</li>
-        <li>
-          To remove macOS quarantine restrictions and allow the app to run, open the Terminal and run:
-        </li>
-      </ol>
-      <br>
-      <div class="relative">
+        <div>
+            <h3 class="text-xl font-semibold mb-2">4. Install and Launch</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-200">
+                <li>Double-click the <code>xium.dmg</code> file to mount the installer disk image.</li>
+                <li>A Finder window will open showing the <strong>XIUM</strong> app and the
+                    <strong>Applications</strong> folder.
+                </li>
+                <li>Drag the <strong>XIUM</strong> app into the <strong>Applications</strong> folder to install it.</li>
+                <li>
+                    To remove macOS quarantine restrictions and allow the app to run, open the Terminal and run:
+                </li>
+            </ol>
+            <br>
+            <div class="relative">
 <pre id="cmd-xattr" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
 xattr -dr com.apple.quarantine /Applications/Xium.app
 </pre>
-        <button
-                onclick="copyToClipboard('cmd-xattr', this)"
-                class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
-        >
-          Copy
-        </button>
-      </div>
-      <br>
-      <p>You can now launch the app normally, without Apple’s signing or approval.</p>
+                <button
+                        onclick="copyToClipboard('cmd-xattr', this)"
+                        class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-xs text-white px-2 py-1 rounded transition"
+                >
+                    Copy
+                </button>
+            </div>
+            <br>
+            <p>You can now launch the app normally, without Apple’s signing or approval.</p>
+        </div>
+
     </div>
 
-  </div>
+    <!-- Windows -->
+    <div>
+        <h2 class="text-2xl font-bold mb-4">🪟 Windows</h2>
+        <ol class="list-decimal list-inside space-y-2 text-gray-200">
+            <li>Download the <code>xium.exe</code> from the <a href="https://github.com/xium/xium.ai/releases"
+                                                               class="text-blue-400 underline">releases page</a>.
+            </li>
+            <li>Double-click the installer to start installation.</li>
+            <li>If Windows Defender warns you, click <strong>More info</strong> → <strong>Run anyway</strong>.</li>
+            <li>Follow the setup wizard to install XIUM on your system.</li>
+        </ol>
+    </div>
 
-  <!-- Windows -->
-  <div>
-    <h2 class="text-2xl font-bold mb-4">🪟 Windows</h2>
-    <ol class="list-decimal list-inside space-y-2 text-gray-200">
-      <li>Download the <code>xium.exe</code> from the <a href="https://github.com/xium/xium.ai/releases" class="text-blue-400 underline">releases page</a>.</li>
-      <li>Double-click the installer to start installation.</li>
-      <li>If Windows Defender warns you, click <strong>More info</strong> → <strong>Run anyway</strong>.</li>
-      <li>Follow the setup wizard to install XIUM on your system.</li>
-    </ol>
-  </div>
-
-  <!-- Linux -->
-  <div>
-    <h2 class="text-2xl font-bold mb-4">🐧 Linux (.deb-based)</h2>
-    <ol class="list-decimal list-inside space-y-2 text-gray-200">
-      <li>Download the <code>xium.deb</code> file from the <a href="https://github.com/xium/xium.ai/releases" class="text-blue-400 underline">releases page</a>.</li>
-      <li>Install it using your terminal:</li>
-      <pre class="bg-gray-800 text-green-300 p-4 rounded-md overflow-x-auto"><code>sudo dpkg -i xium.deb</code></pre>
-      <li>Resolve missing dependencies if needed:</li>
-      <pre class="bg-gray-800 text-green-300 p-4 rounded-md overflow-x-auto"><code>sudo apt-get install -f</code></pre>
-    </ol>
-  </div>
+    <!-- Linux -->
+    <div>
+        <h2 class="text-2xl font-bold mb-4">🐧 Linux (.deb-based)</h2>
+        <ol class="list-decimal list-inside space-y-2 text-gray-200">
+            <li>Download the <code>xium.deb</code> file from the <a href="https://github.com/xium/xium.ai/releases"
+                                                                    class="text-blue-400 underline">releases page</a>.
+            </li>
+            <li>Install it using your terminal:</li>
+            <pre class="bg-gray-800 text-green-300 p-4 rounded-md overflow-x-auto"><code>sudo dpkg -i xium.deb</code></pre>
+            <li>Resolve missing dependencies if needed:</li>
+            <pre class="bg-gray-800 text-green-300 p-4 rounded-md overflow-x-auto"><code>sudo apt-get install -f</code></pre>
+        </ol>
+    </div>
 </section>
 
 <footer class="bg-black text-center py-6 text-gray-400 mt-auto">
-  &copy; 2025 XIUM Crypto Platform — All rights reserved.
+    &copy; 2025 XIUM Crypto Platform — All rights reserved.
 </footer>
-</body>
-</html></title>
-</head>
-<body>
-
 </body>
 </html>
