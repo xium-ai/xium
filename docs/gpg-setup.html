@@ -61,8 +61,15 @@
         </li>
 
         <li>
-            <strong>Verify downloaded software:</strong><br />
+            <strong>Check the fingerprint:</strong><br />
             If we provide a signature file (e.g. <code>xium.dmg.asc</code>), run:<br />
+            <code class="bg-gray-800 px-2 py-1 rounded inline-block mt-1">
+                gpg --fingerprint info@xium.ai
+            </code>
+        </li>
+
+        <li>
+            <strong>Verify downloaded software:</strong><br />
             <code class="bg-gray-800 px-2 py-1 rounded inline-block mt-1">
                 gpg --verify xium.dmg.asc xium.dmg
             </code>
