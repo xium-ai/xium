@@ -54,15 +54,15 @@
         <div>
             <h3 class="text-xl font-semibold mb-2">2. Get the Installer</h3>
             <p>
-                Download <code>Xium_25.5.31_aarch64.dmg</code> and optionally <code>Xium_25.5.31_aarch64.dmg.sig</code> (for signature verification)
+                Download <code>xium.dmg</code> and optionally <code>xium.dmg.sig</code> (for signature verification)
                 from this link:
-                <a href="https://github.com/xium-ai/xium/releases/download/v25.5.31/Xium_25.5.31_aarch64.dmg.sig"
+                <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg.sig"
                    class="text-blue-400 underline">
-                    Xium_25.5.31_aarch64.dmg
+                    xium.dmg
                 </a>
-                <a href="https://github.com/xium-ai/xium/releases/download/v25.5.31/Xium_25.5.31_aarch64.dmg"
+                <a href="https://github.com/xium-ai/xium/releases/download/v2025.5.29/xium.dmg"
                    class="text-blue-400 underline">
-                    Xium_25.5.31_aarch64.dmg.sig
+                    xium.dmg.sig
                 </a>
                 You can also find it on our <a href="https://github.com/xium-ai/xium/releases"
                                                class="text-blue-400 underline">releases page</a>.
@@ -78,7 +78,7 @@
 
             <div class="relative">
 <pre id="cmd-shasum" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
-shasum -a 256 Downloads/Xium_25.5.31_aarch64.dmg
+shasum -a 256 Downloads/xium.dmg
 </pre>
                 <button
                         onclick="copyToClipboard('cmd-shasum', this)"
@@ -111,7 +111,7 @@ shasum -a 256 Downloads/Xium_25.5.31_aarch64.dmg
             <br>
             <div class="relative">
 <pre id="cmd-gpg" class="bg-gray-800 p-3 pr-16 rounded-lg overflow-x-auto text-sm text-gray-100">
-gpg --verify Downloads/Xium_25.5.31_aarch64.dmg.sig Downloads/Xium_25.5.31_aarch64.dmg
+gpg --verify Downloads/xium.dmg.sig Downloads/xium.dmg
 </pre>
                 <button
                         onclick="copyToClipboard('cmd-gpg', this)"
@@ -135,7 +135,7 @@ gpg: Good signature from "xium &lt;info@xium.ai&gt;" [ultimate]
         <div>
             <h3 class="text-xl font-semibold mb-2">4. Install and Launch</h3>
             <ol class="list-decimal list-inside space-y-2 text-gray-200">
-                <li>Double-click the <code>Xium_25.5.31_aarch64.dmg</code> file to mount the installer disk image.</li>
+                <li>Double-click the <code>xium.dmg</code> file to mount the installer disk image.</li>
                 <li>A Finder window will open showing the <strong>XIUM</strong> app and the
                     <strong>Applications</strong> folder.
                 </li>
@@ -166,7 +166,7 @@ xattr -dr com.apple.quarantine /Applications/Xium.app
     <div>
         <h2 class="text-2xl font-bold mb-4">🪟 Windows</h2>
         <ol class="list-decimal list-inside space-y-2 text-gray-200">
-            <li>Download the <code>xium.exe</code> from the <a href="https://github.com/xium-ai/xium/releases"
+            <li>Download the <code>xium.exe</code> from the <a href="https://github.com/xium/xium.ai/releases"
                                                                class="text-blue-400 underline">releases page</a>.
             </li>
             <li>Double-click the installer to start installation.</li>
@@ -179,7 +179,7 @@ xattr -dr com.apple.quarantine /Applications/Xium.app
     <div>
         <h2 class="text-2xl font-bold mb-4">🐧 Linux (.deb-based)</h2>
         <ol class="list-decimal list-inside space-y-2 text-gray-200">
-            <li>Download the <code>xium.deb</code> file from the <a href="https://github.com/xium-ai/xium/releases"
+            <li>Download the <code>xium.deb</code> file from the <a href="https://github.com/xium/xium.ai/releases"
                                                                     class="text-blue-400 underline">releases page</a>.
             </li>
             <li>Install it using your terminal:</li>
